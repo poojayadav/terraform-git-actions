@@ -6,7 +6,7 @@ resource "random_string" "random" {
 
 variable "rand_length" {
   type    = "string"
-  default = "8"
+  default = "10"
 }
 
 output "my_first_random_text" {
