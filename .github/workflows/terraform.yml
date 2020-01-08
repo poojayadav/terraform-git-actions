@@ -47,6 +47,13 @@ jobs:
     - name: 'Checkout'
       uses: actions/checkout@master
       if: github.event.action == 'tf_apply'
+    - name: 'Terraform Init'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'init'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: 'Terraform Apply'
       uses: hashicorp/terraform-github-actions@master
       with:
