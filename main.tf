@@ -1,11 +1,11 @@
 resource "random_string" "random" {
-  length = var.rand_length
-  special = true
+  length           = var.rand_length
+  special          = true
   override_special = "/@£$"
 }
 
 variable "rand_length" {
-  type = "string"
+  type    = "string"
   default = "8"
 }
 
