@@ -1,0 +1,4 @@
+buttons:
+  - title: Terraform Apply
+    action: "tf_apply"
+    description: Terraform Apply
