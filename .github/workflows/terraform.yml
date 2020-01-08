@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  terraform:
+  - terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
 
@@ -38,6 +38,15 @@ jobs:
         tf_actions_subcommand: 'plan'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+  - terraform-apply:
+    name: 'Terraform Apply'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Checkout'
+      uses: actions/checkout@master
+      if: github.event.action == 'tf_apply'
     - name: 'Terraform Apply'
       uses: hashicorp/terraform-github-actions@master
       with:
