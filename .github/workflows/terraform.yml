@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  - terraform:
+  terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
 
@@ -39,7 +39,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-  - terraform-apply:
+  terraform-apply:
     name: 'Terraform Apply'
     runs-on: ubuntu-latest
 
